@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Alice",
+    "mood": "Happy",
+    "funFact": "Loves painting"
+  },
+  {
+    "name": "Bob",
+    "mood": "Sad",
+    "funFact": "Can solve a Rubik's cube"
+  },
+  {
+    "name": "Charlie",
+    "mood": "Excited",
+    "funFact": "Speaks 3 languages"
+  },
+  {
+    "name": "Diana",
+    "mood": "Bored",
+    "funFact": "Collects vintage postcards"
+  },
+  {
+    "name": "Ethan",
+    "mood": "Surprised",
+    "funFact": "Has a twin"
+  },
+  {
+    "name": "Fiona",
+    "mood": "Happy",
+    "funFact": "Loves hiking"
+  },
+  {
+    "name": "George",
+    "mood": "Excited",
+    "funFact": "Plays guitar"
+  },
+  {
+    "name": "Hannah",
+    "mood": "Sad",
+    "funFact": "Is learning to cook"
+  }
+]

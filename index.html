@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Memory Match </title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <header>
+        <h1>🎮 Memory Match 🎮</h1>
+        <p class="tagline">✨ Match • Compete • Master ✨</p>
+    </header>
+
+    <!-- Theme Selector -->
+    <section id="theme-selector">
+        <h3>Choose Your Theme:</h3>
+        <div class="theme-buttons">
+            <button class="theme-btn active" data-theme="space">🚀 Space</button>
+            <button class="theme-btn" data-theme="ocean">🌊 Ocean</button>
+            <button class="theme-btn" data-theme="forest">🌲 Forest</button>
+        </div>
+    </section>
+
+    <!-- Stats Dashboard -->
+    <section id="stats-dashboard">
+        <div class="stat-card">
+            <span class="stat-icon">🎮</span>
+            <span class="stat-label">Games Played</span>
+            <span class="stat-value" id="total-games">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-icon">🔥</span>
+            <span class="stat-label">Current Streak</span>
+            <span class="stat-value" id="current-streak">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-icon">⭐</span>
+            <span class="stat-label">Star Rating</span>
+            <span class="stat-value stars" id="star-rating">☆☆☆</span>
+        </div>
+    </section>
+
+    <section id="user-inputs">
+        <h2>⚙️ Setup Your Game</h2>
+        
+        <div class="input-group">
+            <label for="name-input">Name:</label>
+            <input type="text" id="name-input" placeholder="Enter Name" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="funfact-input">Fun Fact:</label>
+            <input type="text" id="funfact-input" placeholder="Enter Fun Fact" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="mood-select">Mood:</label>
+            <select id="mood-select" required>
+                <option value="" disabled selected>Select Mood</option>
+                <option value="Happy">😊 Happy</option>
+                <option value="Sad">😢 Sad</option>
+                <option value="Excited">🎉 Excited</option>
+                <option value="Bored">😴 Bored</option>
+                <option value="Angry">😠 Angry</option>
+                <option value="Surprised">😲 Surprised</option>
+            </select>
+        </div>
+        
+        <div class="button-group">
+            <button id="add-entry-btn" class="btn-primary">➕ Add Entry</button>
+            <button id="load-sample-btn" class="btn-info">📥 Load Sample</button>
+            <button id="fetch-random-btn" class="btn-fetch">🌐 Fetch Random</button>
+            <button id="clear-data-btn" class="btn-danger">🗑️ Clear All</button>
+        </div>
+        
+        <div id="entries-count">
+            <span>Entries: <strong id="entries-number">0</strong></span>
+        </div>
+
+        <div class="game-controls">
+            <button id="start-btn" class="btn-success">🎮 Start Game</button>
+            <button id="new-game-btn" class="btn-new" style="display: none;">✨ New Game</button>
+            <button id="restart-btn" class="btn-warning" style="display: none;">🔄 Restart</button>
+            <button id="pause-btn" class="btn-secondary" style="display: none;">⏸️ Pause</button>
+        </div>
+    </section>
+
+    <!-- Combo Display -->
+    <div id="combo-display" class="combo-hidden">
+        <span class="combo-text">COMBO x<span id="combo-count">0</span></span>
+        <span class="combo-fire">🔥</span>
+    </div>
+
+    <!-- Color Legend -->
+    <section id="color-legend">
+        <h3>🎨 Color Guide:</h3>
+        <div class="legend-items">
+            <div class="legend-item">
+                <span class="legend-color legend-blue"></span>
+                <span>💙 Names</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color legend-purple"></span>
+                <span>💜 Moods</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color legend-orange"></span>
+                <span>🧡 Fun Facts</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Board -->
+    <section id="game-board" class="game-board" aria-label="Game cards">
+        <!-- Cards dynamically generated -->
+    </section>
+
+    <!-- Game Stats -->
+    <div id="game-stats">
+        <div class="stat-item">
+            <span class="stat-icon-small">⏱️</span>
+            <span class="stat-label-small">Time:</span>
+            <span class="stat-value-small" id="timer">0</span>s
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon-small">✅</span>
+            <span class="stat-label-small">Matches:</span>
+            <span class="stat-value-small" id="score">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon-small">🏆</span>
+            <span class="stat-label-small">Best:</span>
+            <span class="stat-value-small" id="high-score">--</span>
+        </div>
+    </div>
+
+    <!-- Achievement Popup -->
+    <div id="achievement-popup" class="achievement-hidden">
+        <div class="achievement-content">
+            <span class="achievement-icon">🏆</span>
+            <span class="achievement-text"></span>
+        </div>
+    </div>
+
+    <!-- Particle Container -->
+    <div id="particles-container"></div>
+
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
