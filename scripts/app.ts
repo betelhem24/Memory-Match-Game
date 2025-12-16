@@ -113,6 +113,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 // Storage Functions
+// Saves all current memory sets to LocalStorage so game data persists
 function saveToLocalStorage() {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(memorySets));
@@ -122,6 +123,7 @@ function saveToLocalStorage() {
     }
 }
 
+// Loads saved memory sets from LocalStorage and restores the game state
 function loadFromLocalStorage() {
     try {
         const saved = localStorage.getItem(STORAGE_KEY);
@@ -135,6 +137,7 @@ function loadFromLocalStorage() {
     }
 }
 
+// Stores a new high score only if it beats the previous best time
 function saveHighScore(time: number): boolean {
     try {
         const current = localStorage.getItem(HIGH_SCORE_KEY);
@@ -150,6 +153,7 @@ function saveHighScore(time: number): boolean {
     }
 }
 
+// Retrieves the saved high score and displays it in the UI
 function loadHighScore() {
     try {
         const score = localStorage.getItem(HIGH_SCORE_KEY);
@@ -161,6 +165,7 @@ function loadHighScore() {
     }
 }
 
+// Loads overall game statistics or returns default values if none exist
 function loadStats(): GameStats {
     try {
         const saved = localStorage.getItem(STATS_KEY);
@@ -170,6 +175,7 @@ function loadStats(): GameStats {
     }
 }
 
+// Saves updated game statistics and refreshes the stats display
 function saveStats(stats: GameStats) {
     try {
         localStorage.setItem(STATS_KEY, JSON.stringify(stats));
